@@ -1,0 +1,89 @@
+html, body
+{
+	background-color: midnightblue;
+	color: #000;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#top
+{
+	width:900px;
+	height: 75%;
+	text-align:center;
+	margin: 0 auto;
+
+}
+
+#NAGLOWEK 
+{
+	background-color: #888;
+	font-size: 24px;
+}
+
+#MENU 
+{
+	width: 200px;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	background-color: #ccc;
+
+}
+
+#INFORMACJE
+{
+	width: 200px;
+
+	float: right;
+	overflow: hidden;
+	position: relative;
+	background-color: #ccc;
+}
+
+#TRESC {
+	width: 500px;
+	float: center;
+	height: auto;
+	margin-left: 200px;
+	margin-right: 200px;
+	background-color: #fff;
+
+}
+.bttn {
+  background-color: light-gray;
+ 
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.inpuut{
+	width: 300px; height: 30px;
+}
+/*#STOPKA {
+	clear: both;
+	background-color: #888;
+
+}*/
+#LICZBY {
+	height:100px;
+	width:100px;
+}			
+.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableCell{
+	//border: 1px solid #999999;
+	display: table-cell;
+	padding: 3px 10px;
+}

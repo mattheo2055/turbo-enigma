@@ -1,12 +1,12 @@
 body,
 html {
 	/* Perfect Full Page Background */
-	background: url(header.jpg) no-repeat center center fixed; 
+	background: url(images/solen-feyissa-uEsmzRuKG7o-unsplash.jpg) no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
-
+	background-color: black;
   	width: 100%;
   	height: 100%;
   	font-family: 'Montserrat', sans-serif;
@@ -15,6 +15,28 @@ h1{
 	font-size: 3rem;
 	color: #9575AB;
 
+}
+.col-sm-6 ,.col-12 > img{
+	width: 100%;
+	border-radius: 5%;
+}
+.row{
+	margin: 2rem;
+}
+.dropdown-menu{
+	background-color: gray;
+}
+.dropdown-item{
+	/* border: 1px solid floralwhite; */
+	color: #FFFFFF80;
+}
+.dropdown-item:hover{
+	cursor: pointer;
+	color: black;
+	background-color:floralwhite;
+}
+h6 {
+	color: cornsilk;
 }
 .btn{
 	font-weight: 700;

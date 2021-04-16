@@ -1,0 +1,334 @@
+<!doctype html>
+<HTML>
+
+<HEAD>
+	<link rel="Stylesheet" href="style1.css" type="text/css">
+	<title> Zadanie 5 </title>
+	
+<script type="text/javascript">
+function sprawdz()
+{
+	obj = document.getElementById('imie');
+	imiee=obj.value;
+	wartosc = sprawdznazwe(imiee);
+	if (wartosc == 0)
+	{
+		alert("Z³e imie");
+		return
+	}
+	
+	obj = document.getElementById('nazwisko');
+	nazwiskoo=obj.value;
+	wartosc = sprawdznazwe(nazwiskoo);
+	if (wartosc == 0)
+	{
+		alert("Z³e nazwisko");
+		return
+	}
+
+	obj = document.getElementById('ulica');
+	ulicaa=obj.value;
+	wartosc = sprawdznazwe(ulicaa);
+	if (wartosc == 0)
+	{
+		alert("Z³a ulica");
+		return
+	}
+	
+	obj = document.getElementById('nrdomu');
+	nrdomuu=obj.value;
+	wartosc = sprawdzcyfre(nrdomuu);
+	if (wartosc == 0)
+	{
+		alert("Z³y nr domu");
+		return
+	}
+	
+	obj = document.getElementById('nrmieszkania');
+	nrmieszkaniaa=obj.value;
+	wartosc = sprawdzcyfre(nrmieszkaniaa);
+	if (wartosc == 0)
+	{
+		alert("Z³y nr mieszkania");
+		return
+	}
+	
+	obj = document.getElementById('miasto');
+	miastoo=obj.value;
+	wartosc = sprawdznazwe(miastoo);
+	if (wartosc == 0)
+	{
+		alert("Z³e miasto");
+		return
+	}
+	
+	obj = document.getElementById('telefon');
+	telefonn=obj.value;
+	wartosc = sprawdzcyfre(telefonn);
+	if (wartosc == 0 || telefonn.length!=9)
+	{
+		alert("Z³y telefon");
+		return
+	}
+	obj = document.getElementById('kodpocztowy');
+	kodpocztowyy=obj.value;
+	wartosc = sprawdzkod(kodpocztowyy);
+	if (wartosc == 0)
+	{
+		alert("Z³y kod pocztowy");
+		return
+	}
+	
+	alert("Formularz wypelniony poprawnie");
+}
+function sprawdznazwe(nazwa)
+{
+	var Wyrazenie = /^[A-Za-z-±æê³ñó¶¿¼]+$/
+	if (nazwa == "" || nazwa == " ")
+	{
+		alert("Pola nie mog± byc puste");
+		return false;
+	}
+	wynik = Wyrazenie.test(nazwa);
+	//wynik=!wynik;
+	if (wynik == 0)
+	{
+		alert("Zla nazwa");
+		return false;
+	}
+	var Wyrazenie = /^[A-Z¡ÆÊ£ÑÓ¦-]/
+	wynik = Wyrazenie.test(nazwa);
+	//wynik=!wynik;
+	if (wynik == 0)
+	{
+		
+		return false;
+	}
+	return true;
+}
+function sprawdzcyfre(nazwa)
+{
+	const Wyrazenie = /\D/;
+	wynik = Wyrazenie.test(nazwa);
+	if (wynik == 1)
+	{
+		
+		return false;
+	}
+	return true;
+}
+function sprawdzkod(nazwa)
+{
+	var Wyrazenie = new RegExp('\d\d-\d\d\d');
+	wynik = Wyrazenie.test(nazwa);
+	if (wynik == 1)
+	{
+		
+		return false;
+	}
+	return true;
+}
+
+
+</script>
+</HEAD>
+
+<BODY>
+<div id="top">
+	<div id="NAGLOWEK"> </br> <b> <a href=index.html>Strona g?ówna</a> </b> </div>
+	
+	<div id="MENU">
+		<p6> MENU		<br/> </p1>
+		<p1> <a href=zad2a.html>Zadanie 2a</a> <br/> </p1>
+		<p1> <a href=zad2b.html>Zadanie 2b</a> <br/> </p1>
+		<p1> <a href=zad2c.html>Zadanie 2c</a> <br/> </p1>
+		<p1> <a href=zad2d.html>Zadanie 2d</a> <br/> </p1>
+		
+	</div>
+	<div id="INFORMACJE">
+		<!--
+		INFO</br> 
+		Mateusz Gajewski </br>
+		grupa nr 3 </br>
+		nr indeksu 196060 </br>
+		mattheo2055@gmail.com </br>
+	-->
+	</div>
+<div id="TRESC" style="text-align: left;">
+<div class="divTable">
+	<div class="divTableRow">
+		<div class="divTableCell" align="right"> Imiê: </div>
+		<div class="divTableCell" align="left">  <input type="text" id="imie"> </div>
+	</div>
+
+	<div class="divTableRow">
+		<div class="divTableCell" align="right"> Nazwisko: </div>
+		<div class="divTableCell" align="left">  <input type="text" id="nazwisko"> </div>
+	</div>
+
+	<div class="divTableRow">
+		<div class="divTableCell" align="right"> Ulica: </div>
+		<div class="divTableCell" align="left">  <input type="text" id="ulica"> </div>
+	</div>
+
+	<div class="divTableRow">
+		<div class="divTableCell" align="right"> Nr domu: </div>
+		<div class="divTableCell" align="left">  <input type="text" id="nrdomu"> </div>
+	</div>
+
+	<div class="divTableRow">
+		<div class="divTableCell" align="right"> Nr mieszkania: </div>
+		<div class="divTableCell" align="left">  <input type="text" id="nrmieszkania"> </div>
+	</div>
+
+	<div class="divTableRow">
+		<div class="divTableCell" align="right"> Miasto: </div>
+		<div class="divTableCell" align="left">  <input type="text" id="miasto"> </div>
+	</div>
+
+	<div class="divTableRow">
+		<div class="divTableCell" align="right"> Kod Pocztowy: </div>
+		<div class="divTableCell" align="left">  <input type="text" id="kodpocztowy"> </div>
+	</div>
+
+	<div class="divTableRow">
+		<div class="divTableCell" align="right"> P³eæ: </div>
+		<div class="divTableCell" align="left">
+		<input type="radio" name="plec" value="Kobieta"> Kobieta
+		<input type="radio" name="plec" value="Mê¿czyzna"> M??czyzna
+		<input type="radio" name="plec" value="Inna"> Inna </div>
+	</div>
+
+	<div class="divTableRow">
+		<div class="divTableCell" align="right"> Czy posiadasz prawo jazdy: </div>
+		<div class="divTableCell" align="left"> 
+		<input type="radio" id="prawojazdy" name="prawojazdy" value="tak"> Tak
+		<input type="radio" id="prawojazdy" name="prawojazdy" value="nie"> Nie </div>
+	</div>
+	
+	<div class="divTableRow">
+		<div class="divTableCell" align="right"> Województwo </div>
+		<div class="divTableCell" align="left">
+		<select id="wojewodztwo">
+			
+			<option> dolno¶l±skie </option>
+			<option> kujawsko-pomorskie </option>
+			<option> lubelskie </option>
+			<option> lubuskie </option>
+			<option> ³ódzkie </option>
+			<option> ma³opolskie </option>
+			<option selected> mazowieckie </option>
+			<option> opolskie </option>
+			<option> podkarpackie </option>
+			<option> podlaskie </option>
+			<option> pomorskie </option>
+			<option> ¶l±skie </option>
+			<option> ¶wiêtokrzyskie </option>
+			<option> warmiñsko-mazurskie </option>
+			<option> wielkopolskie </option>
+			<option> zachodniopomorskie </option>
+		</select>
+		</div>
+	</div>
+	<div class="divTableRow">
+		<div class="divTableCell" align="right"> Uwagi: </div>
+		<div class="divTableCell" align="left"><textarea id="uwagi" cols="30" rows="5" placeholder="Napisz uwagi."></textarea></div>
+	</div>
+	<div class="divTableRow">
+		<div class="divTableCell" align="right"> Data urodzenia </div>
+		<div class="divTableCell" align="left"> <input type="date" id="dataurodzenia"> </div>
+	</div>
+	<div class="divTableRow">
+		<div class="divTableCell" align="right"> Nr telefonu </div>
+		<div class="divTableCell" align="left"> <input type="text" id="telefon"> </div>
+	</div>
+	<div class="divTableRow">
+		<div class="divTableCell" align="right"> Has³o: </div>
+		<div class="divTableCell" align="left">  <input type="password" name="miasto"> </div>
+	</div>
+	<div class="divTableRow">
+		<div class="divTableCell" align="right"> </div>
+		<div class="divTableCell" align="left"> <input type="submit" onclick="sprawdz();"> </div>
+	</div>
+</div>
+	<!--
+	<table>
+	<tr>
+		<td align="right"> Imi?: </td>
+		<td align="left">  <input type="text" id="imie"> </td>
+	</tr>
+	<tr>
+		<td align="right"> Nazwisko: </td>
+		<td align="left">  <input type="text" id="nazwisko"> </td>
+	</tr>
+	<tr>
+		<td align="right"> Ulica: </td>
+		<td align="left">  <input type="text" id="ulica"> </td>
+	</tr>
+	<tr>
+		<td align="right"> Nr domu: </td>
+		<td align="left">  <input type="text" id="nrdomu"> </td>
+	</tr>
+	<tr>
+		<td align="right"> Nr mieszkania: </td>
+		<td align="left">  <input type="text" id="nrmieszkania"> </td>
+	</tr>
+	<tr>
+		<td align="right"> Miasto: </td>
+		<td align="left">  <input type="text" id="miasto"> </td>
+	</tr>
+	<tr>
+		<td align="right"> P?e?: </td>
+		<td align="left"> 
+		<input type="radio" id="plec" value="Kobieta" checked="checked"> Kobieta
+		<input type="radio" id="plec" value="M??czyzna"> M??czyzna </td>
+	</tr>
+	<tr>
+		<td align="right"> Czy posiadasz prawo jazdy: </td>
+		<td align="left"> 
+		<input type="radio" id="prawojazdy" value="tak"> Tak
+		<input type="radio" id="prawojazdy" value="nie" checked="checked"> Nie </td>
+	</tr>
+	<tr>
+		<td align="right"> Województwo </td>
+		<td align="left">
+		<select id="wojewodztwo">
+			<option> dolno?l?skie </option>
+			<option> dolno?l?skie </option>
+			<option> kujawsko-pomorskie </option>
+			<option> lubelskie </option>
+			<option> lubuskie </option>
+			<option> ?ódzkie </option>
+			<option> ma?opolskie </option>
+			<option selected> mazowieckie </option>
+			<option> opolskie </option>
+			<option> podkarpackie </option>
+			<option> podlaskie </option>
+			<option> pomorskie </option>
+			<option> ?l?skie </option>
+			<option> ?wi?tokrzyskie </option>
+			<option> warmi?sko-mazurskie </option>
+			<option> wielkopolskie </option>
+			<option> zachodniopomorskie </option>
+	</tr>
+	<tr>
+		<td align="right"> Uwagi: </td>
+		<td align="left"> <textarea id="uwagi" cols="30" rows="5"> Prosz? wpisa? uwagi... </textarea> </td>
+	</tr>
+	<tr>
+		<td align="right"> Data urodzenia </td>
+		<td align="left"> <input type="date" id="dataurodzenia"> </td>
+	</tr>
+	<tr>
+		<td align="right"> Nr telefonu </td>
+		<td align="left"> <input type="text" id="telefon"> </td>
+	</tr>
+	</table>
+	<input type="button" value="PRZESLIJ" onclick="sprawdz()" />
+-->
+</div>
+	
+	<div id="STOPKA">.     </div>
+</div>	
+</BODY>
+</HTML>
